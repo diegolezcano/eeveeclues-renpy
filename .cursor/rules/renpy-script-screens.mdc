@@ -1,0 +1,42 @@
+---
+description: Ren'Py script and screen patterns for Eevee Clues
+globs: "**/*.rpy"
+alwaysApply: false
+---
+
+# Ren'Py script and screens
+
+## Script (script.rpy)
+
+- Use `default` for persistable variables.
+- Use `$` for one-line Python.
+- Use `call screen` then read `_return` for choices.
+- Use `Call("label_name")` for actions that must return to the caller (e.g. action_talk, action_location, action_review).
+- Scenes: `scene board_bg` in investigation_loop; `scene dialogue_bg` and `show expression store.EVOLUTION_TO_PORTRAIT.get(_chosen, "portrait_eevee")` (or store.LOCATION_TO_IMAGE.get(_loc, "loc_lake")) in action_talk/action_location; `scene result_victory` / `scene result_defeat` in show_result.
+- Only append to gathered_clues and increment used_actions when get_clue_for_action returns something other than "Nothing new here."
+
+## Screens (screens.rpy)
+
+- **Init block**: Define styles game_panel_text (color gui.game_panel_text, outlines [(2, "#000000")]), game_action_button / game_back_button (background, hover_background, padding), and game_action_button_text / game_back_button_text (color, hover_color, size). Do not set text_color/text_idle_color on the button style; use the _text child style.
+- **Readability**: All UI text on dark panels: frame with `background Solid(gui.game_panel_bg)`. Text: `style "game_panel_text"` and explicit size. Buttons: `style "game_action_button"` or `style "game_back_button"`.
+- **Modals**: Start with `add Solid(gui.game_modal_overlay)` then a centered frame with `background Solid(gui.game_panel_bg)` and padding.
+- **Investigation**: add "board_bg"; content in a frame with Solid(gui.game_panel_bg); clue viewport can use a darker frame background.
+- Reference init data via store: `store.EEVEELUTIONS`, `store.STONES`, `store.LOCATIONS`. For computed values (e.g. actions left), use a `$` line to set a variable then use it in text (e.g. `$ actions_left = max_actions - used_actions` then `text "... [actions_left]"`); do not put expressions like `[max_actions - used_actions]` directly in screen text (KeyError).
+- Modal pickers: use `Return(value)` for a choice, `Return(None)` for Back.
+- Difficulty-style choices: use `SetVariable("name", value)` then `Return()`.
+
+Example: `for evo in store.EEVEELUTIONS` with `textbutton evo action Return(evo) style "game_action_button"`.
+
+## Data (data.rpy)
+
+- Keep a single `init python:` block; expose names to store with `store.X = X` at the end (include EVOLUTION_BY_STONE for tests).
+- Clue generation must never contradict the guilty pair (culprit, stolen_stone). generate_clues() tags entries with "evolution" (character) or "stone" (environment/elimination). get_clue_for_action(action_type, target) selects a matching unused clue and marks it in used_clue_indices; returns "Nothing new here." when none match.
+- random_case() sets used_clue_indices = set().
+
+## Flow
+
+start → pick_difficulty → new_game → investigation_loop (repeat until "Make a Guess" or out of actions) → accusation_phase → show_result. Action labels (action_talk, action_location, action_review) are invoked via Call() and use `return` to go back to investigation_loop.
+
+## Tests (test_eevee_clues.rpy)
+
+- testcase Name: (no quotes on name); block properties on following lines: description "...", parameter difficulty = [...]. Use `$` for setup and `assert eval(...)` for assertions. No `while` in test blocks; use single-shot or conditional assertions for randomness.

@@ -1,0 +1,13 @@
+---
+description: Image asset conventions and prompts for Eevee Clues
+globs: "game/image_prompts.md"
+alwaysApply: false
+---
+
+# Images and assets
+
+- **Path**: Assets live in game/images/. In script and screens, reference by image name only (e.g. `"portrait_eevee"`, `"board_bg"`), no path.
+- **Wiring**: script.rpy uses scene/show for board_bg, dialogue_bg, result_victory, result_defeat; show expression store.EVOLUTION_TO_PORTRAIT.get(evolution, "portrait_eevee") or store.LOCATION_TO_IMAGE.get(location, "loc_lake"). screens.rpy uses add "menu_bg", add "board_bg". data.rpy defines EVOLUTION_TO_PORTRAIT and LOCATION_TO_IMAGE and exposes them on store. gui.main_menu_background can point to "menu_bg".
+- **Style**: Kid-friendly, cozy mystery, consistent. Use game/image_prompts.md for style locks per section (portraits, stone icons, locations).
+- **Adding art**: Add a row to the appropriate section in image_prompts.md and append the filename to the quick-reference file list. Reuse the same style lock for that section (e.g. all portraits share one style phrase). If the image is shown in game, add the mapping in data.rpy (EVOLUTION_TO_PORTRAIT or LOCATION_TO_IMAGE) and reference it in script/screens.
+- **New character or stone**: Add portrait or icon and a row in image_prompts.md only after the entity is already defined in data.rpy (and in clue dicts if applicable).

@@ -1,0 +1,52 @@
+---
+description: Eevee Clues project context and file roles
+alwaysApply: true
+---
+
+# Eevee Clues – Project context
+
+Eevee Clues is a Ren'Py visual novel: a kid-friendly detective game where the player discovers which Eeveelution stole which evolution stone. Target audience: kids; tone cozy and non-scary.
+
+## File roles
+
+- **script.rpy**: Main flow, `default` variables, labels (start, new_game, investigation_loop, action_*, accusation_phase, show_result). Uses scene/show for board_bg, dialogue_bg, result_victory/defeat, and expression for portrait/location images.
+- **options.rpy**: Config only (config.*, preferences). No game logic.
+- **data.rpy**: Single `init python:` block with constants (EEVEELUTIONS, STONES, EVOLUTION_BY_STONE, STONE_TO_LOCATION, LOCATION_TO_STONE), clue dicts (CHARACTER_CLUES, LOCATION_CLUES), and helpers: random_case(), generate_clues(), get_clue_for_action(). Expose to store: EEVEELUTIONS, STONES, LOCATIONS, EVOLUTION_BY_STONE, EVOLUTION_TO_PORTRAIT, LOCATION_TO_IMAGE.
+- **screens.rpy**: All screens plus `init` block with styles (game_panel_text, game_action_button, game_back_button and _text). Panels use Solid(gui.game_panel_bg); modals use Solid(gui.game_modal_overlay). add "menu_bg" / "board_bg" where used.
+- **gui.rpy**: Ren'Py GUI config; game-specific vars: gui.game_panel_bg, gui.game_panel_text, gui.game_button_bg_idle, gui.game_button_bg_hover, gui.game_modal_overlay, gui.game_button_back_bg.
+- **image_prompts.md**: Asset prompts; actual images live in game/images/.
+- **test_eevee_clues.rpy**: Automated Ren'Py testcases (Data + Logic). Run with `renpy . test` or launcher "Run Testcases". Required to pass before deploy.
+- **TEST_CHECKLIST.md**: Manual scenario checklist (M1–M26, M17a).
+- **TESTING.md**: How to run automated tests and manual checklist.
+
+## Naming
+
+- Data (data.rpy) exposes: EEVEELUTIONS, STONES, LOCATIONS, EVOLUTION_BY_STONE, EVOLUTION_TO_PORTRAIT, LOCATION_TO_IMAGE.
+- Store variables: culprit, stolen_stone, gathered_clues, used_actions, max_actions, guess_evolution, guess_stone, difficulty, used_clue_indices, clues, clue_index.
+
+## Clue logic
+
+- get_clue_for_action(action_type, target) is choice-based: "talk" returns a character clue for the chosen evolution; "location" returns an env/elim clue for that location’s stone. Used clues tracked in used_clue_indices. "Nothing new here." when no match; script does not consume an action in that case.
+
+## Where to add features
+
+- New labels → script.rpy.
+- New screens → screens.rpy; reuse game_panel_text and game_action_button / game_back_button for readability.
+- New constants or clue content → data.rpy.
+- New images → game/images/ and add an entry in game/image_prompts.md; add mapping in data.rpy (EVOLUTION_TO_PORTRAIT or LOCATION_TO_IMAGE) if script/screens show them.
+- New automated tests → test_eevee_clues.rpy (testcase Name: with description and assert eval(...)).
+
+## Testing
+
+- Automated: `renpy "path/to/project" test` from project root. All testcases must pass before deploy.
+- Manual: Use TEST_CHECKLIST.md (M1–M26, M17a). At least one pass per difficulty and key flows before release.
+
+## Stack
+
+Ren'Py; no voice; Dissolve transitions; screen choices returned via _return. Run from project root with Ren'Py launcher (renpy.sh / renpy.exe); game directory is game/. Prefer "launch via Ren'Py and test in-game" when suggesting UI or flow changes.
+
+## Do not
+
+- Put game logic in options.rpy.
+- Add new Eeveelutions or stones without updating data.rpy (EEVEELUTIONS, STONES, EVOLUTION_BY_STONE, STONE_TO_LOCATION, CHARACTER_CLUES, LOCATION_CLUES) and image_prompts.md together.
+- Use text_color / text_idle_color on button style in Ren'Py 8; use the _text child style (e.g. game_action_button_text) for color, hover_color, size.

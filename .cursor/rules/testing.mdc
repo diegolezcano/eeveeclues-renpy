@@ -1,0 +1,23 @@
+---
+description: Testing (automated and manual) for Eevee Clues
+globs: "game/test_eevee_clues.rpy", "game/TEST*.md"
+alwaysApply: false
+---
+
+# Testing
+
+## Automated (Ren'Py testcases)
+
+- **File**: game/test_eevee_clues.rpy. Data and Logic layer only (no UI automation).
+- **Run**: From project root (parent of game/): `renpy "path/to/Eevee Clues" test`. Or launcher "Run Testcases" (refresh launcher after adding first test).
+- **Gate**: All testcases must pass before deploy. Fix failures or relax assertions only with justification.
+- **Syntax**: testcase Name: (identifier, no quotes). Block: description "...", parameter x = [...], then `$` and assert eval(...). Button text style uses _text child (e.g. game_action_button_text), not text_idle_color on button.
+
+## Manual checklist
+
+- **File**: game/TEST_CHECKLIST.md. Scenarios M1–M26 plus M17a (Back at 0 actions re-enters accusation).
+- **Use**: Pre-deploy; at least one full pass per difficulty and key flows (investigation, accusation, result, Play again).
+
+## Docs
+
+- game/TESTING.md: Run command, pass criteria, pointer to manual checklist.

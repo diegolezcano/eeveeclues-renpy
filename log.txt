@@ -1,0 +1,229 @@
+2026-02-13 23:54:01 UTC
+Windows-11-10.0.26200-SP0
+Ren'Py 8.5.2.26010301
+
+Early init took 133 ms
+Loading error handling took 58 ms
+Loading script took 777 ms
+Loading save slot metadata took 86 ms
+Loading persistent took 0 ms
+Running init code took 487 ms
+Loading analysis data took 58 ms
+Analyze and compile ATL took 8 ms
+Reloading save slot metadata took 60 ms
+Backing up script files to 'C:\\Users\\vicky\\AppData\\Roaming/RenPy/backups\\game':
+Dump and make backups took 51 ms
+Cleaning cache took 0 ms
+Making clean stores took 2 ms
+Initial gc took 271 ms
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 12 ms
+Init translation took 2 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 69 ms
+Save screen analysis took 75 ms
+Save pyanalysis took 20 ms
+Save bytecode took 118 ms
+
+[rpytest] Starting test run
+[rpytest] Platform:      Windows-11-10.0.26200-SP0
+[rpytest] Python:        3.12.7
+[rpytest] Ren'Py:        Ren'Py 8.5.2.26010301
+[rpytest] Game Version:  0.1
+
+[rpytest] [exc] + global
+Running _start took 10 ms
+Interface start took 1765 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Intel'
+Renderer: 'Intel(R) UHD Graphics'
+Version: '4.6.0 - Build 30.0.101.1338'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 991) drawable=(1920, 991)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1920, 991) drawable=(1920, 991)
+Maximum texture size: 4096x4096
+[rpytest] [exc]   - Data_Constants_EEVEELUTIONSLength8
+[rpytest] [exc]   - Data_Constants_EEVEELUTIONSLength8 (0.038 s)
+[rpytest] [exc]   - Data_Constants_STONESLength8
+[rpytest] [exc]   - Data_Constants_STONESLength8 (0.036 s)
+[rpytest] [exc]   - Data_EvolutionByStone_OneEntryPerStone
+[rpytest] [exc]   - Data_EvolutionByStone_OneEntryPerStone (0.050 s)
+[rpytest] [exc]   - Data_EvolutionByStone_ValuesInEEVEELUTIONS
+[rpytest] [exc]   - Data_EvolutionByStone_ValuesInEEVEELUTIONS (0.134 s)
+[rpytest] [exc]   - Logic_RandomCase_ValidCulpritAndStone(difficulty='easy')
+[rpytest] [exc]   - Logic_RandomCase_ValidCulpritAndStone(difficulty='easy') (0.151 s)
+[rpytest] [exc]   - Logic_RandomCase_ValidCulpritAndStone(difficulty='normal')
+[rpytest] [exc]   - Logic_RandomCase_ValidCulpritAndStone(difficulty='normal') (0.092 s)
+[rpytest] [exc]   - Logic_RandomCase_ValidCulpritAndStone(difficulty='hard')
+[rpytest] [exc]   - Logic_RandomCase_ValidCulpritAndStone(difficulty='hard') (0.054 s)
+[rpytest] [exc]   - Logic_RandomCase_ClueCountInRange(difficulty='easy')
+[rpytest] [exc]   - Logic_RandomCase_ClueCountInRange(difficulty='easy') (0.088 s)
+[rpytest] [exc]   - Logic_RandomCase_ClueCountInRange(difficulty='normal')
+[rpytest] [exc]   - Logic_RandomCase_ClueCountInRange(difficulty='normal') (0.130 s)
+[rpytest] [exc]   - Logic_RandomCase_ClueCountInRange(difficulty='hard')
+[rpytest] [exc]   - Logic_RandomCase_ClueCountInRange(difficulty='hard') (0.842 s)
+[rpytest] [exc]   - Logic_RandomCase_MaxActionsMatchesDifficulty(difficulty='easy')
+[rpytest] [exc]   - Logic_RandomCase_MaxActionsMatchesDifficulty(difficulty='easy') (0.050 s)
+[rpytest] [exc]   - Logic_RandomCase_MaxActionsMatchesDifficulty(difficulty='normal')
+[rpytest] [exc]   - Logic_RandomCase_MaxActionsMatchesDifficulty(difficulty='normal') (0.501 s)
+[rpytest] [exc]   - Logic_RandomCase_MaxActionsMatchesDifficulty(difficulty='hard')
+[rpytest] [exc]   - Logic_RandomCase_MaxActionsMatchesDifficulty(difficulty='hard') (0.046 s)
+[rpytest] [exc]   - Logic_RandomCase_UsedClueIndicesEmpty
+[rpytest] [exc]   - Logic_RandomCase_UsedClueIndicesEmpty (0.043 s)
+[rpytest] [exc]   - Logic_GetClueForAction_Talk_ReturnsClueWhenAvailable
+[rpytest] [exc]   - Logic_GetClueForAction_Talk_ReturnsClueWhenAvailable (0.047 s)
+[rpytest] [exc]   - Logic_GetClueForAction_Talk_ReturnsNothingWhenExhausted
+[rpytest] [exc]   - Logic_GetClueForAction_Talk_ReturnsNothingWhenExhausted (0.097 s)
+[rpytest] [exc]   - Logic_GetClueForAction_Location_ReturnsClueWhenAvailable
+[rpytest] [exc]   - Logic_GetClueForAction_Location_ReturnsClueWhenAvailable (0.060 s)
+[rpytest] [exc]   - Logic_GetClueForAction_InvalidTarget_Talk_ReturnsNothing
+[rpytest] [exc]   - Logic_GetClueForAction_InvalidTarget_Talk_ReturnsNothing (0.084 s)
+[rpytest] [exc]   - Logic_GetClueForAction_InvalidTarget_Location_ReturnsNothing
+[rpytest] [exc]   - Logic_GetClueForAction_InvalidTarget_Location_ReturnsNothing (0.064 s)
+[rpytest] [exc]   - Logic_WinCondition_CorrectPair_True
+[rpytest] [exc]   - Logic_WinCondition_CorrectPair_True (0.098 s)
+[rpytest] [exc]   - Logic_WinCondition_WrongEvolution_False
+[rpytest] [exc]   - Logic_WinCondition_WrongEvolution_False (0.084 s)
+[rpytest] [exc]   - Logic_WinCondition_WrongStone_False
+[rpytest] [exc]   - Logic_WinCondition_WrongStone_False (0.119 s)
+[rpytest] [exc]   - Logic_ClueLog_EmptyAfterReset
+[rpytest] [exc]   - Logic_ClueLog_EmptyAfterReset (0.145 s)
+[rpytest] [exc]   - Logic_ClueLog_TalkCulpritAppendsOne
+[rpytest] [exc]   - Logic_ClueLog_TalkCulpritAppendsOne (0.180 s)
+[rpytest] [exc]   - Logic_ClueLog_LocationCrimeAppendsOne
+
+Full traceback:
+  File "renpy/test/testexecution.py", line 549, in update
+    node_executor.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/test/testexecution.py", line 487, in execute
+    self.check_for_timeout(now)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "renpy/test/testexecution.py", line 508, in check_for_timeout
+    raise RenpyTestTimeoutError(f"TestCase timed out after {_test.timeout} seconds.")
+renpy.test.types.RenpyTestTimeoutError: TestCase timed out after 5.0 seconds.
+
+While running game code:
+renpy.test.types.RenpyTestTimeoutError: TestCase timed out after 5.0 seconds.
+File "C:\Renpy\renpy\common\_layout\screen_main_menu.rpym", line 28, in script
+  python hide:
+
+During testcase execution:
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\.", line 0, in None
+    
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\test_eevee_clues.rpy", line 162, in testsuite global
+    testcase Logic_ClueLog_LocationCrimeAppendsOne:
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\test_eevee_clues.rpy", line 171, in testcase Logic_ClueLog_LocationCrimeAppendsOne
+    assert eval(_txt != "Nothing new here.")
+
+====================
+[rpytest] [exc]   - Logic_ClueLog_LocationCrimeAppendsOne (3.461 s)
+[rpytest] [exc]   - Logic_ClueLog_LocationCrimeAppendsOne (3.461 s)
+[rpytest] [exc]   - Logic_ClueLog_GuaranteedTwoEntries
+
+Full traceback:
+  File "renpy/test/testexecution.py", line 549, in update
+    node_executor.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/test/testexecution.py", line 487, in execute
+    self.check_for_timeout(now)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "renpy/test/testexecution.py", line 507, in check_for_timeout
+    if (now - self.last_state_change) > _test.timeout:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+TypeError: '>' not supported between instances of 'float' and 'NoneType'
+
+While running game code:
+TypeError: '>' not supported between instances of 'float' and 'NoneType'
+  File "C:\Renpy\renpy\common\_layout\screen_main_menu.rpym", line 28, in script
+    python hide:
+
+During testcase execution:
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\.", line 0, in None
+    
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\test_eevee_clues.rpy", line 175, in testsuite global
+    testcase Logic_ClueLog_GuaranteedTwoEntries:
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\test_eevee_clues.rpy", line 177, in testcase Logic_ClueLog_GuaranteedTwoEntries
+    $ store.difficulty = "normal"
+
+====================
+[rpytest] [exc]   - Logic_ClueLog_GuaranteedTwoEntries (2.541 s)
+[rpytest] [exc]   - Logic_ClueLog_GuaranteedTwoEntries (2.541 s)
+[rpytest] [exc]   - Logic_ClueLog_NothingNewNotAppended
+
+Full traceback:
+  File "renpy/test/testexecution.py", line 549, in update
+    node_executor.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/test/testexecution.py", line 487, in execute
+    self.check_for_timeout(now)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "renpy/test/testexecution.py", line 507, in check_for_timeout
+    if (now - self.last_state_change) > _test.timeout:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+TypeError: '>' not supported between instances of 'float' and 'NoneType'
+
+While running game code:
+TypeError: '>' not supported between instances of 'float' and 'NoneType'
+  File "C:\Renpy\renpy\common\_layout\screen_main_menu.rpym", line 28, in script
+    python hide:
+
+During testcase execution:
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\.", line 0, in None
+    
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\test_eevee_clues.rpy", line 189, in testsuite global
+    testcase Logic_ClueLog_NothingNewNotAppended:
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\test_eevee_clues.rpy", line 191, in testcase Logic_ClueLog_NothingNewNotAppended
+    $ store.difficulty = "normal"
+
+====================
+[rpytest] [exc]   - Logic_ClueLog_NothingNewNotAppended (2.210 s)
+[rpytest] [exc]   - Logic_ClueLog_NothingNewNotAppended (2.210 s)
+[rpytest] [exc]   - UI_HowToPlayContent_InStore_NonEmpty
+
+Full traceback:
+  File "renpy/test/testexecution.py", line 549, in update
+    node_executor.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "renpy/test/testexecution.py", line 487, in execute
+    self.check_for_timeout(now)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "renpy/test/testexecution.py", line 507, in check_for_timeout
+    if (now - self.last_state_change) > _test.timeout:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+TypeError: '>' not supported between instances of 'float' and 'NoneType'
+
+While running game code:
+TypeError: '>' not supported between instances of 'float' and 'NoneType'
+  File "C:\Renpy\renpy\common\_layout\screen_main_menu.rpym", line 28, in script
+    python hide:
+
+During testcase execution:
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\.", line 0, in None
+    
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\test_eevee_clues.rpy", line 204, in testsuite global
+    testcase UI_HowToPlayContent_InStore_NonEmpty:
+  File "C:\Users\vicky\OneDrive\Documents\Batty Mission\Eevee Clues\game\test_eevee_clues.rpy", line 206, in testcase UI_HowToPlayContent_InStore_NonEmpty
+    assert eval(hasattr(store, "how_to_play_content"))
+
+====================
+[rpytest] [exc]   - UI_HowToPlayContent_InStore_NonEmpty (0.828 s)
+[rpytest] [exc]   - UI_HowToPlayContent_InStore_NonEmpty (0.828 s)
+
+[rpytest] Test outcomes (Summary)
+[rpytest] Test suites:     1 |     0 passed |     0 xfailed |     1 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test cases :    28 |    24 passed |     0 xfailed |     4 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Test hooks :     0 |     0 passed |     0 xfailed |     0 failed |     0 xpassed |     0 skipped |     0 not run
+[rpytest] Assertions :    29 |    29 passed |     0 xfailed |     0 failed |     0 xpassed | 
+
+[rpytest] Time: 22.554 s
+[rpytest] Status: FAILED 
+
