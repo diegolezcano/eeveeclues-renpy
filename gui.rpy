@@ -9,7 +9,7 @@ init offset = -2
 ## Calling gui.init resets the styles to sensible default values, and sets the
 ## width and height of the game.
 init python:
-    gui.init(1920, 1080)
+    gui.init(1080, 1920)
 
 ## Enable checks for invalid or unstable properties in screens or transforms
 define config.check_conflicting_properties = True
@@ -114,7 +114,7 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 360
+define gui.name_xpos = 80
 define gui.name_ypos = 0
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
@@ -138,11 +138,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 402
+define gui.dialogue_xpos = 100
 define gui.dialogue_ypos = 75
 
-## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 1116
+## The maximum width of dialogue text, in pixels (portrait: fit ~1080px width).
+define gui.dialogue_width = 920
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -212,7 +212,7 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ##
 ## Choice buttons are used in the in-game menus.
 
-define gui.choice_button_width = 1185
+define gui.choice_button_width = 1000
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(150, 8, 150, 8)
@@ -240,9 +240,9 @@ define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color
 define gui.slot_button_text_selected_hover_color = gui.hover_color
 
-## The width and height of thumbnails used by the save slots.
-define config.thumbnail_width = 384
-define config.thumbnail_height = 216
+## The width and height of thumbnails used by the save slots (portrait aspect).
+define config.thumbnail_width = 256
+define config.thumbnail_height = 384
 
 ## The number of columns and rows in the grid of save slots.
 define gui.file_slot_cols = 3
@@ -434,12 +434,11 @@ init python:
 
         gui.quick_button_borders = Borders(60, 21, 60, 0)
 
-    ## This changes the size and spacing of various GUI elements to ensure they
-    ## are easily visible on phones.
+    ## Portrait-friendly values for small screens (phones).
     @gui.variant
     def small():
 
-        ## Font sizes.
+        ## Font sizes (readable and touch-friendly).
         gui.text_size = 45
         gui.name_text_size = 54
         gui.notify_text_size = 38
@@ -447,42 +446,37 @@ init python:
         gui.button_text_size = 45
         gui.label_text_size = 51
 
-        ## Adjust the location of the textbox.
+        ## Textbox and dialogue (fit portrait width ~1080).
         gui.textbox_height = 360
-        gui.name_xpos = 120
-        gui.dialogue_xpos = 135
-        gui.dialogue_width = 1650
+        gui.name_xpos = 80
+        gui.dialogue_xpos = 100
+        gui.dialogue_width = 1000
 
-        ## Change the size and spacing of various things.
+        ## Sliders and choice buttons.
         gui.slider_size = 54
-
-        gui.choice_button_width = 1860
+        gui.choice_button_width = None
         gui.choice_button_text_size = 45
 
         gui.navigation_spacing = 30
         gui.pref_button_spacing = 15
 
         gui.history_height = 285
-        gui.history_text_width = 1035
+        gui.history_text_width = 1000
 
         gui.quick_button_text_size = 30
 
-        ## File button layout.
+        ## File slot layout for portrait (2 cols, more rows).
         gui.file_slot_cols = 2
-        gui.file_slot_rows = 2
+        gui.file_slot_rows = 3
 
-        ## NVL-mode.
+        ## NVL-mode (portrait width).
         gui.nvl_height = 255
-
-        gui.nvl_name_width = 458
-        gui.nvl_name_xpos = 488
-
-        gui.nvl_text_width = 1373
-        gui.nvl_text_xpos = 518
+        gui.nvl_name_width = 300
+        gui.nvl_name_xpos = 40
+        gui.nvl_text_width = 1000
+        gui.nvl_text_xpos = 40
         gui.nvl_text_ypos = 8
-
-        gui.nvl_thought_width = 1860
-        gui.nvl_thought_xpos = 30
-
-        gui.nvl_button_width = 1860
-        gui.nvl_button_xpos = 30
+        gui.nvl_thought_width = 1000
+        gui.nvl_thought_xpos = 40
+        gui.nvl_button_width = 1000
+        gui.nvl_button_xpos = 40

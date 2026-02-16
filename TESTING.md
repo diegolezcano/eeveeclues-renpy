@@ -19,3 +19,10 @@ Test file: `game/test_eevee_clues.rpy` (Data + Logic layer). Names: `Data_*`, `L
 ## Manual checklist
 
 See [TEST_CHECKLIST.md](TEST_CHECKLIST.md) for scenarios M1–M26 and the Back-at-0-actions edge (M17a). Run at least one full pass per difficulty and the key flows before deploy.
+
+## Portrait and mobile
+
+The game is configured for **portrait** orientation and mobile. Before release:
+
+- Resize the game window to a portrait aspect (e.g. 1080×1920 or 720×1280), or run on an Android emulator/device, and verify: layout fits, clue log and modals scroll, buttons are usable.
+- When building an APK (Ren'Py launcher → Distribute), set orientation to portrait in the Android build options so the app locks to portrait on device.

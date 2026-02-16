@@ -65,7 +65,7 @@ label action_talk:
         $ txt = get_clue_for_action("talk", _chosen)
         scene expression Transform("dialogue_bg", size=(config.screen_width, config.screen_height))
         $ _portrait = store.EVOLUTION_TO_PORTRAIT.get(_chosen, "portrait_eevee")
-        show expression Transform(_portrait, fit="contain", ysize=900, xalign=0.5, yalign=0.5)
+        show expression Transform(_portrait, fit="contain", ysize=int(config.screen_height * 0.45), xalign=0.5, yalign=0.5)
         with Dissolve(0.15)
         "" "[txt]"
         if txt == "Nothing new here.":

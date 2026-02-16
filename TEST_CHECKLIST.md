@@ -62,6 +62,15 @@ Pre-deploy: run at least one full pass per difficulty, then sample Back/edge cas
 
 ---
 
+## Portrait / mobile (smoke)
+
+| #   | Scenario              | Steps                                              | Expected                                                                 |
+| --- | --------------------- | -------------------------------------------------- | ------------------------------------------------------------------------ |
+| M22a| Portrait layout       | Run in portrait window (e.g. 720×1280) or on device | Panels fit; clue log and modals scroll; no horizontal overflow.          |
+| M22b| Mobile-sized window   | Resize to narrow width (e.g. 400×800)             | Buttons stack; all screens usable; touch-sized targets on small variant.  |
+
+---
+
 ## UI and assets (smoke)
 
 | #   | Scenario                   | Steps                         | Expected                                                     |
